@@ -33,7 +33,7 @@ settings.defaultSearchEngine = "d";
 settings.hintAlign = "left";
 settings.focusFirstCandidate = true;
 settings.focusAfterClosed = "last";
-settings.scrollStepSize = 240; // j/k scrolls step
+settings.scrollStepSize = 200; // j/k scrolls step
 settings.tabsThreshold = 0;
 settings.modeAfterYank = "Normal";
 settings.startToShowEmoji = 2;
@@ -70,7 +70,7 @@ map("L", "D"); // go forward in history
 map('o', 'go'); // open URL in current tab
 map("O", ";e"); // edit settings
 map('P', 'cc'); // open clipboard URL in new tab
-map("q", "x"); // close current tab
+// map("q", "x"); // close current tab
 map("Q", "X"); // restore closed tab
 map("U", "X"); // restore closed tab
 map("yl", "ya"); // copy current page's URL
@@ -151,6 +151,7 @@ unmap("ow"); // open Omnibar for bing Search
 unmap("ox"); // open recently closed URL
 unmap("oy"); // open Omnibar for youtube Search
 // unmap("O"); // open detected links from text
+unmap("q"); // click on an Image or a button
 unmap("R"); // go one tab right
 unmap("sb"); // search selected with baidu
 unmap("sd"); // search selected with duckduckgo
@@ -163,8 +164,8 @@ unmap("sy"); // search selected with youtube
 unmap("S"); // go back in history
 unmap("T"); // choose a tab
 unmap("w"); // switch frames
-unmap("W"); // move current tab to another window
-unmap("x"); // close current tab
+// unmap("W"); // move current tab to another window
+// unmap("x"); // close current tab
 unmap("X"); // restore closed tab
 unmap("ya"); // copy a link URL to the clipboard
 unmap("yc"); // copy a column of a table
