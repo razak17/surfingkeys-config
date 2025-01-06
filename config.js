@@ -70,7 +70,7 @@ map("L", "D"); // go forward in history
 map('o', 'go'); // open URL in current tab
 map("O", ";e"); // edit settings
 map('P', 'cc'); // open clipboard URL in new tab
-// map("q", "x"); // close current tab
+map("X", "x"); // close current tab
 map("Q", "X"); // restore closed tab
 map("U", "X"); // restore closed tab
 map("yl", "ya"); // copy current page's URL
@@ -165,8 +165,8 @@ unmap("S"); // go back in history
 unmap("T"); // choose a tab
 unmap("w"); // switch frames
 // unmap("W"); // move current tab to another window
-// unmap("x"); // close current tab
-unmap("X"); // restore closed tab
+unmap("x"); // close current tab
+// unmap("X"); // restore closed tab
 unmap("ya"); // copy a link URL to the clipboard
 unmap("yc"); // copy a column of a table
 unmap("yd"); // copy current downloading URL
