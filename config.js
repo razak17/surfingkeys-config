@@ -53,6 +53,50 @@ mapkey("p", "Open the clipboard's URL in the current tab", () => {
     window.location.href = response.data;
   });
 });
+mapkey("ymi", "#7Copy all img URLs to the clipboard", function () {
+  var images = document.getElementsByTagName("img");
+  var imageLinks = [];
+
+  for (var i = 0; i < images.length; i++) {
+    imageLinks.push(images[i].src);
+  }
+
+  Clipboard.write(imageLinks.join("\n"));
+});
+api.mapkey(
+  "ymI",
+  "#7choose and then copy all URLs to the clipboard",
+  function () {
+    var images = document.getElementsByTagName("img");
+
+    var format = prompt(
+      "Choose what format to copy (available: jpg, png, gif, webp）：",
+    );
+
+    var imageLinks = [];
+
+    for (var i = 0; i < images.length; i++) {
+      var src = images[i].src;
+      if (src.endsWith("." + format)) {
+        imageLinks.push(src);
+      }
+    }
+    Clipboard.write(imageLinks.join("\n"));
+  },
+);
+api.mapkey("ymp", "#7Copy all pdf URLs to the clipboard", function () {
+  var links = document.querySelectorAll("a");
+  var pdfLinks = [];
+
+  links.forEach((link) => {
+    var href = link.href;
+    if (href && href.toLowerCase().endsWith(".pdf")) {
+      pdfLinks.push(href);
+    }
+  });
+
+  Clipboard.write(pdfLinks.join("\n"));
+});
 //----------------------------------
 // REMAP
 //----------------------------------
