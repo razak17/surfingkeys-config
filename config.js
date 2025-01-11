@@ -70,9 +70,9 @@ map("L", "D"); // go forward in history
 map('o', 'go'); // open URL in current tab
 map("O", ";e"); // edit settings
 map('P', 'cc'); // open clipboard URL in new tab
-map("X", "x"); // close current tab
 map("Q", "X"); // restore closed tab
 map("U", "X"); // restore closed tab
+map("X", "x"); // close current tab
 map("yl", "ya"); // copy current page's URL
 map("yu", "yy"); // copy current page's URL
 map("yy", "yv"); // yank text of an element
