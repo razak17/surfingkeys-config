@@ -7,7 +7,7 @@
 // COMPATIBILITY PREFIX
 //----------------------------------
 const {
-    addSearchAlias,
+  addSearchAlias,
   Front,
   Clipboard,
   Normal,
@@ -23,8 +23,9 @@ const {
   unmap,
   removeSearchAlias,
   aceVimMap,
+  tabOpenLink,
 } = api;
-const disableMainBindings = false
+const disableMainBindings = false;
 //----------------------------------
 // SETTINGS
 //----------------------------------
@@ -41,10 +42,17 @@ settings.omnibarMaxResults = 20;
 //----------------------------------
 // MAPKEYS
 //----------------------------------
-mapkey("t", "Choose a tab", () => { Front.openOmnibar({ type: "Tabs" }); });
-mapkey("<Ctrl-d>", "Scroll down", () => { Normal.scroll("pageDown"); });
-mapkey("<Ctrl-u>", "Scroll up", () => { Normal.scroll("pageUp"); });
-mapkey('p', "Open the clipboard's URL in the current tab", () => { Clipboard.read(function(response) { window.location.href = response.data; }); });
+mapkey("<Ctrl-d>", "Scroll down", () => {
+  Normal.scroll("pageDown");
+});
+mapkey("<Ctrl-u>", "Scroll up", () => {
+  Normal.scroll("pageUp");
+});
+mapkey("p", "Open the clipboard's URL in the current tab", () => {
+  Clipboard.read(function (response) {
+    window.location.href = response.data;
+  });
+});
 //----------------------------------
 // REMAP
 //----------------------------------
@@ -56,10 +64,12 @@ imap("jk", "<Esc>");
 // Normal Mode
 map(">", ">>"); // move current tab to right
 map("<", "<<"); // move current tab to left
-map('<Alt-f>', 'cf');
-map('<Alt-h>', '[[');
-map('<Alt-l>', ']]');
-map('F', 'C');
+map("<Alt-f>", "cf");
+map("<Alt-h>", "[[");
+map("<Alt-l>", "]]");
+map("<Ctrl-;>", ";e"); // edit settings
+map("D", "yT"); // duplicate current tab in background
+map("F", "C"); // open a link in non-active new tab
 map("gu", ";U"); // edit current URL and open in same tab
 map("gU", ";u"); // edit current URL and open in new tab
 map("h", "oh"); // open URL from history
@@ -67,9 +77,10 @@ map("H", "S"); // go back in history
 map("J", "E"); // go one tab left
 map("K", "R"); // go one tab right
 map("L", "D"); // go forward in history
-map('o', 'go'); // open URL in current tab
-map("O", ";e"); // edit settings
-map('P', 'cc'); // open clipboard URL in new tab
+map("O", "on"); // Open newtab
+map("o", "go"); // open URL in current tab,
+map("P", "cc"); // open clipboard URL in new tab
+map("t", "T"); // Choose a tab
 map("Q", "X"); // restore closed tab
 map("U", "X"); // restore closed tab
 map("X", "x"); // close current tab
@@ -126,7 +137,7 @@ unmap("cq"); // query word with Hints
 unmap("cS"); // reset scroll target
 unmap("cs"); // change scroll target
 unmap("C"); // open a link in non-active new tab
-unmap("D"); // go forward in history
+// unmap("D"); // go forward in history
 unmap("e"); // scroll half page up
 unmap("E"); // scroll full page up
 unmap("g?"); // reload current page without query string(all parts after question mark)
@@ -218,20 +229,50 @@ removeSearchAlias("w", "s");
 removeSearchAlias("y", "s");
 removeSearchAlias("s", "s");
 
-addSearchAlias('ama', 'amazon', 'https://www.amazon.com/s?k=', 's');
-addSearchAlias('ap', 'arch pkg', 'https://www.archlinux.org/packages/?sort=&q=', 's');
-addSearchAlias('aur', 'aur', 'https://aur.archlinux.org/packages/?O=0&SeB=nd&K=', 's');
-addSearchAlias('aw', 'arch wiki', 'https://wiki.archlinux.org/index.php?title=Special:Search&search=', 's');
-addSearchAlias('d',  'ddg', 'https://duckduckgo.com/?q=', 's');
-addSearchAlias('dh', 'docker', 'https://hub.docker.com/search?type=image&q=', 's');
-addSearchAlias('fh', 'flathub', 'https://flathub.org/apps/search/', 's');
-addSearchAlias('gg', 'google', 'https://google.com/search?q=%s', 's');
-addSearchAlias('gh', 'github', 'https://github.com/search?q=', 's');
-addSearchAlias('pdb', 'proton', 'https://www.protondb.com/search?q=', 's');
-addSearchAlias('r', 'reddit', 'https://libreddit.spike.codes/r/', 's');
-addSearchAlias('st', 'steam', 'https://store.steampowered.com/search/?term=', 's');
-addSearchAlias('wiki', 'wikipedia', 'https://en.wikipedia.org/wiki/Special:Search/', 's');
-addSearchAlias('y', 'yt', 'https://invidious.snopyta.org/search?q=', 's');
+addSearchAlias("ama", "amazon", "https://www.amazon.com/s?k=", "s");
+addSearchAlias(
+  "ap",
+  "arch pkg",
+  "https://www.archlinux.org/packages/?sort=&q=",
+  "s",
+);
+addSearchAlias(
+  "aur",
+  "aur",
+  "https://aur.archlinux.org/packages/?O=0&SeB=nd&K=",
+  "s",
+);
+addSearchAlias(
+  "aw",
+  "arch wiki",
+  "https://wiki.archlinux.org/index.php?title=Special:Search&search=",
+  "s",
+);
+addSearchAlias("d", "ddg", "https://duckduckgo.com/?q=", "s");
+addSearchAlias(
+  "dh",
+  "docker",
+  "https://hub.docker.com/search?type=image&q=",
+  "s",
+);
+addSearchAlias("fh", "flathub", "https://flathub.org/apps/search/", "s");
+addSearchAlias("gg", "google", "https://google.com/search?q=%s", "s");
+addSearchAlias("gh", "github", "https://github.com/search?q=", "s");
+addSearchAlias("pdb", "proton", "https://www.protondb.com/search?q=", "s");
+addSearchAlias("r", "reddit", "https://libreddit.spike.codes/r/", "s");
+addSearchAlias(
+  "st",
+  "steam",
+  "https://store.steampowered.com/search/?term=",
+  "s",
+);
+addSearchAlias(
+  "wiki",
+  "wikipedia",
+  "https://en.wikipedia.org/wiki/Special:Search/",
+  "s",
+);
+addSearchAlias("y", "yt", "https://invidious.snopyta.org/search?q=", "s");
 //----------------------------------
 // THEME
 //----------------------------------
@@ -239,11 +280,11 @@ addSearchAlias('y', 'yt', 'https://invidious.snopyta.org/search?q=', 's');
 
 // Doom One
 Hints.style(
-  "border: solid 2px #282C34; color:#EBCB8B; background: initial; background-color: #2E3440;"
+  "border: solid 2px #282C34; color:#EBCB8B; background: initial; background-color: #2E3440;",
 );
 Hints.style(
   "border: solid 2px #282C34 !important; padding: 1px !important; color: #51AFEF !important; background: #2E3440 !important;",
-  "text"
+  "text",
 );
 Visual.style("marks", "background-color: #98be6599;");
 Visual.style("cursor", "background-color: #51AFEF;");
