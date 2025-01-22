@@ -112,7 +112,6 @@ map("<Alt-f>", "cf");
 map("<Alt-h>", "[[");
 map("<Alt-l>", "]]");
 map("<Ctrl-;>", ";e"); // edit settings
-map("D", "yT"); // duplicate current tab in background
 map("F", "C"); // open a link in non-active new tab
 map("gu", ";U"); // edit current URL and open in same tab
 map("gU", ";u"); // edit current URL and open in new tab
@@ -121,6 +120,7 @@ map("H", "S"); // go back in history
 map("J", "E"); // go one tab left
 map("K", "R"); // go one tab right
 map("L", "D"); // go forward in history
+map("D", "yT"); // duplicate current tab in background
 map("O", "on"); // Open newtab
 map("o", "go"); // open URL in current tab,
 map("P", "cc"); // open clipboard URL in new tab
