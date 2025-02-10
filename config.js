@@ -111,6 +111,8 @@ map("<", "<<"); // move current tab to left
 map("<Alt-f>", "cf");
 map("<Alt-h>", "[[");
 map("<Alt-l>", "]]");
+map(";ba", "ab"); // bookmark current page to selected folder
+map(";br", ";db"); // remove bookmark for current page
 map("<Ctrl-;>", ";e"); // edit settings
 map("F", "C"); // open a link in non-active new tab
 map("gu", ";U"); // edit current URL and open in same tab
@@ -146,7 +148,9 @@ unmap("[["); // click on the previous link on current page
 unmap("]]"); // click on the next link on current page
 unmap(";ap"); // apply proxy info from clipboard
 unmap(";cp"); // copy proxy info
+unmap(";db"); // remove bookmark for current page
 unmap(";di"); // download image
+unmap(";dh"); // delete history older than 30 days
 unmap(";e"); // edit settings
 unmap(";fs"); // display hints to focus scrollable elements
 unmap(";gt"); // gather filtered tabs into current window
@@ -159,20 +163,24 @@ unmap(";pb"); // set proxy mode `byhost`
 unmap(";pc"); // set proxy mode `clear`
 unmap(";pd"); // set proxy mode `direct`
 unmap(";pf"); // fill form with data from yf
+unmap(";ph"); // put histories from clipboard
 unmap(";pj"); // restore settings data from clipboard
 unmap(";pm"); // preview markdown
 unmap(";pp"); // paste html on current page
 unmap(";ps"); // set proxy mode `system`
+unmap(";ql"); // show last action
 unmap(";s"); // toggle pdf viewer
 unmap(";t"); // translate selected text with google
 unmap(";u"); // edit current URL with vim editor, and open in new tab
 unmap(";U"); // edit current URL with vim editor, and open in same tab
 unmap(";v"); // open neovim
 unmap(";w"); // focus top window
+unmap(";yh"); // Yank histories
 unmap("<Ctrl-6>"); // go to last used tab
 unmap("<Ctrl-h>"); // mouse over elements.
 unmap("<Ctrl-j>"); // mouse out elements.
 unmap("0"); // scroll all the way to the left
+unmap("ab"); // Bookmark current page to selected folder
 unmap("af"); // open a link in active new tab
 unmap("cc"); // open clipboard in new tab
 unmap("cf"); // open multiple links in a new tab
