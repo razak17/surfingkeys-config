@@ -148,6 +148,7 @@ unmap("[["); // click on the previous link on current page
 unmap("]]"); // click on the next link on current page
 unmap(";ap"); // apply proxy info from clipboard
 unmap(";cp"); // copy proxy info
+unmap(";cq"); // clear all URLs in queue to be opened
 unmap(";db"); // remove bookmark for current page
 unmap(";di"); // download image
 unmap(";dh"); // delete history older than 30 days
