@@ -301,7 +301,7 @@ addSearchAlias(
   "https://wiki.archlinux.org/index.php?title=Special:Search&search=",
   "s",
 );
-addSearchAlias("d", "ddg", "https://duckduckgo.com/?q=", "s");
+addSearchAlias("ddg", "duckduckgo", "https://duckduckgo.com/?q=", "s");
 addSearchAlias(
   "dh",
   "docker",
