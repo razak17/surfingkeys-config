@@ -30,7 +30,7 @@ const disableMainBindings = false;
 // SETTINGS
 //----------------------------------
 Hints.setCharacters("asdfgyuiopqwertnmzxcvb");
-settings.defaultSearchEngine = "d";
+settings.defaultSearchEngine = "ddg";
 settings.hintAlign = "left";
 settings.focusFirstCandidate = true;
 settings.focusAfterClosed = "last";
@@ -301,8 +301,8 @@ addSearchAlias(
   "https://wiki.archlinux.org/index.php?title=Special:Search&search=",
   "s",
 );
+addSearchAlias("bi", "bing", "http://bing.com/search?q=", "s");
 addSearchAlias("ddg", "duckduckgo", "https://duckduckgo.com/?q=", "s");
-addSearchAlias("ud", "unduck", "https://unduck.link?q=%s", "s");
 addSearchAlias(
   "dh",
   "docker",
@@ -320,6 +320,7 @@ addSearchAlias(
   "https://store.steampowered.com/search/?term=",
   "s",
 );
+addSearchAlias("ud", "unduck", "https://unduck.link?q=%s", "s");
 addSearchAlias(
   "wiki",
   "wikipedia",
