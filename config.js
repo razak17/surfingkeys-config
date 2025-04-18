@@ -302,6 +302,7 @@ addSearchAlias(
   "s",
 );
 addSearchAlias("ddg", "duckduckgo", "https://duckduckgo.com/?q=", "s");
+addSearchAlias("ud", "unduck", "https://unduck.link?q=%s", "s");
 addSearchAlias(
   "dh",
   "docker",
