@@ -132,7 +132,8 @@ map("D", "yT"); // duplicate current tab in background
 map("O", "on"); // Open newtab
 map("o", "go"); // open URL in current tab,
 map("P", "cc"); // open clipboard URL in new tab
-map("t", "T"); // Choose a tab
+map("t", "T"); // choose a tab
+map("T", "Q"); // open omnibar for word translation
 map("Q", "X"); // restore closed tab
 map("U", "X"); // restore closed tab
 map("X", "x"); // close current tab
