@@ -71,21 +71,21 @@ mapkey("ymi", "#7Copy all img URLs to the clipboard", function () {
   Clipboard.write(imageLinks.join("\n"));
 });
 mapkey("ymI", "#7choose and then copy all URLs to the clipboard", function () {
-    var images = document.getElementsByTagName("img");
+  var images = document.getElementsByTagName("img");
 
-    var format = prompt(
-      "Choose what format to copy (available: jpg, png, gif, webp）：",
-    );
+  var format = prompt(
+    "Choose what format to copy (available: jpg, png, gif, webp）：",
+  );
 
-    var imageLinks = [];
+  var imageLinks = [];
 
-    for (var i = 0; i < images.length; i++) {
-      var src = images[i].src;
-      if (src.endsWith("." + format)) {
-        imageLinks.push(src);
-      }
+  for (var i = 0; i < images.length; i++) {
+    var src = images[i].src;
+    if (src.endsWith("." + format)) {
+      imageLinks.push(src);
     }
-    Clipboard.write(imageLinks.join("\n"));
+  }
+  Clipboard.write(imageLinks.join("\n"));
 });
 mapkey("ymp", "#7Copy all pdf URLs to the clipboard", function () {
   var links = document.querySelectorAll("a");
