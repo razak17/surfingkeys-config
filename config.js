@@ -24,6 +24,7 @@ const {
   removeSearchAlias,
   aceVimMap,
   tabOpenLink,
+  RUNTIME
 } = api;
 const disableMainBindings = false;
 //----------------------------------
@@ -42,6 +43,12 @@ settings.omnibarMaxResults = 20;
 //----------------------------------
 // MAPKEYS
 //----------------------------------
+// mapkey("J", "Previous Tab", () => {
+//   RUNTIME("previousTab")
+// });
+// mapkey("K", "Next Tab", () => {
+//   RUNTIME("nextTab")
+// });
 mapkey("<Ctrl-d>", "Scroll down", () => {
   Normal.scroll("pageDown");
 });
