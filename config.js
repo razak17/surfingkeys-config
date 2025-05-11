@@ -141,7 +141,7 @@ map("yl", "ya"); // copy current page's URL
 map("yu", "yy"); // copy current page's URL
 map("yy", "yv"); // yank text of an element
 map("yY", "ymv"); // yank text of multiple elements
-map("zf", "gf"); // open a link in non-active new tab
+// map("zf", "gf"); // open a link in non-active new tab
 // Visual Mode
 vmap("v", "zv"); // enter visual mode, and select whole element
 //----------------------------------
@@ -186,6 +186,7 @@ unmap(";w"); // focus top window
 unmap(";yh"); // Yank histories
 unmap("<Ctrl-6>"); // go to last used tab
 unmap("<Ctrl-h>"); // mouse over elements.
+// unmap("<Ctrl-i>"); // go to edit box with vim editor.
 unmap("<Ctrl-j>"); // mouse out elements.
 unmap("0"); // scroll all the way to the left
 unmap("ab"); // Bookmark current page to selected folder
@@ -203,7 +204,7 @@ unmap("E"); // scroll full page up
 unmap("g?"); // reload current page without query string(all parts after question mark)
 unmap("g#"); // reload current page without hash fragment
 unmap("gi"); // go to the first edit box
-// unmap("gf"); // open a link in non-active new tab
+unmap("gf"); // open a link in non-active new tab
 unmap("go"); // open URL in current tab
 // unmap("gu"); // go up one path in the URL
 unmap("gs"); // view page source
@@ -233,7 +234,7 @@ unmap("ss"); // search selected with stackoverflow
 unmap("sw"); // search selected with bing
 unmap("sy"); // search selected with youtube
 unmap("S"); // go back in history
-unmap("T"); // choose a tab
+// unmap("T"); // choose a tab
 unmap("w"); // switch frames
 // unmap("W"); // move current tab to another window
 unmap("x"); // close current tab
