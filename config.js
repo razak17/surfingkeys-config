@@ -24,7 +24,7 @@ const {
   removeSearchAlias,
   aceVimMap,
   tabOpenLink,
-  RUNTIME
+  RUNTIME,
 } = api;
 const disableMainBindings = false;
 //----------------------------------
@@ -70,10 +70,7 @@ mapkey("ymi", "#7Copy all img URLs to the clipboard", function () {
 
   Clipboard.write(imageLinks.join("\n"));
 });
-api.mapkey(
-  "ymI",
-  "#7choose and then copy all URLs to the clipboard",
-  function () {
+mapkey("ymI", "#7choose and then copy all URLs to the clipboard", function () {
     var images = document.getElementsByTagName("img");
 
     var format = prompt(
@@ -89,9 +86,8 @@ api.mapkey(
       }
     }
     Clipboard.write(imageLinks.join("\n"));
-  },
-);
-api.mapkey("ymp", "#7Copy all pdf URLs to the clipboard", function () {
+});
+mapkey("ymp", "#7Copy all pdf URLs to the clipboard", function () {
   var links = document.querySelectorAll("a");
   var pdfLinks = [];
 
@@ -103,6 +99,9 @@ api.mapkey("ymp", "#7Copy all pdf URLs to the clipboard", function () {
   });
 
   Clipboard.write(pdfLinks.join("\n"));
+});
+mapkey("<Alt-y>", "#8Open recently closed tabs", () => {
+  Front.openOmnibar({ type: "RecentlyClosed" });
 });
 //----------------------------------
 // REMAP
