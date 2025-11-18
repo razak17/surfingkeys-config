@@ -319,7 +319,7 @@ addSearchAlias(
 );
 addSearchAlias("fh", "flathub", "https://flathub.org/apps/search/", "s");
 addSearchAlias("gg", "google", "https://google.com/search?q=%s", "s");
-addSearchAlias("gh", "github", "https://github.com/search?q=", "s");
+addSearchAlias("gh", "github", "https://github.com/search?q=%s", "s");
 addSearchAlias("pdb", "proton", "https://www.protondb.com/search?q=", "s");
 addSearchAlias("r", "reddit", "https://libreddit.spike.codes/r/", "s");
 addSearchAlias(
