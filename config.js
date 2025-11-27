@@ -356,9 +356,9 @@ settings.theme = `
 /* Edit these variables for easy theme making */
 :root {
   /* Font */
-  --font: 'Source Code Pro', Ubuntu, sans;
-  --font-size: 13;
-  --font-weight: bold;
+  --font: 'Operator Mono', Ubuntu, sans;
+  --font-size: 10pt;
+  --font-weight: light;
 
   /* -------------- */
   /* --- THEMES --- */
